@@ -3,6 +3,7 @@ import { loadAllArticles } from "../AC";
 import { connect } from "react-redux";
 import Loader from "./Loader";
 import { NavLink } from "react-router-dom";
+import { ArticleSelector } from "../selectors";
 
 class ArticleList extends Component {
 
@@ -15,17 +16,17 @@ class ArticleList extends Component {
     const { articles, loading } = this.props;
     if (!loading) return <Loader/>;
     console.log(articles);
-    // const articleElements = articles.map((article) => <li key={article.id}>
-    //   <NavLink
-    //     to={`/articles/${article.id}`}
-    //     activeStyle={{ color: "tomato" }}>
-    //     {article.name}
-    //   </NavLink>
-    // </li>);
+    const articleElements = articles.map((article) => <li key={article.postId}>
+      <NavLink
+        to={`/articles/${article.postId}`}
+        activeStyle={{ color: "tomato" }}>
+        {article.name}
+      </NavLink>
+    </li>);
 
     return (
       <ul>
-        {/*{articleElements}*/}
+        {articleElements}
       </ul>
     );
   }
@@ -33,7 +34,7 @@ class ArticleList extends Component {
 
 export default connect((state) => {
   return {
-    articles: state.posts,
+    articles: ArticleSelector(state),
     loading: state.articles.loading,
   };
 }, { loadAllArticles })(ArticleList);
