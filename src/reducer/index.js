@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 import { history } from "../history";
-import posts from "./loadAllPosts";
+import articles from "./articles";
 
 const router = connectRouter(history);
 
 export default combineReducers({
-  posts,
+  articles,
   router
 });
