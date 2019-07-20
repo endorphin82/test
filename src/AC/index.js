@@ -1,5 +1,5 @@
 // import { replace } from "connected-react-router";
-import { LOAD_ALL_ARTICLES, START, SUCCESS, FAILURE } from "../constants";
+import { LOAD_ALL_ARTICLES } from "../constants";
 
 export function loadAllArticles() {
   return {
