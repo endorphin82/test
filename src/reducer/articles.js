@@ -19,7 +19,7 @@ const ReducerState = new Record({
 const defaultState = new ReducerState();
 
 export default (articleState = defaultState, action) => {
-  const { type, payload, response, error } = action;
+  const { type, response, error } = action;
 
   switch (type) {
     case LOAD_ALL_ARTICLES + START:
