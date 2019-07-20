@@ -6,13 +6,13 @@ import { loadAllArticles } from "../../AC";
 import { history } from "../../history";
 
 import "./App.css";
-import ArticleList from "../ArticleList/ArticleList";
+import MainArticles from "../routes/MainArticles";
 
 class App extends Component {
   render() {
     return (
       <ConnectedRouter history={history}>
-        <ArticleList/>
+        <MainArticles/>
       </ConnectedRouter>
     );
   }
