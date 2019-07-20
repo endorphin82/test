@@ -3,7 +3,7 @@ import { loadAllArticles } from "../../AC";
 import { connect } from "react-redux";
 import Loader from "../Loader";
 import { NavLink } from "react-router-dom";
-import { ArticleSelector } from "../../selectors";
+import { articlesCountGetterSelector, ArticleSelector, commentsCountGetterSelector } from "../../selectors";
 import { Button, Table } from "reactstrap";
 
 class ArticleList extends Component {
@@ -14,7 +14,7 @@ class ArticleList extends Component {
   }
 
   render() {
-    const { articles, loading } = this.props;
+    const { articles, loading, countComments, countArticles } = this.props;
     if (!loading) return <Loader/>;
     console.log(articles);
     const articleElements = articles.map((article) => <tr key={article.postId}>
@@ -53,7 +53,9 @@ class ArticleList extends Component {
     );
 
     return (
-      <Table striped bordered hover>
+      <>
+        {countComments} comments in {countArticles} articles
+        <Table striped bordered hover>
         <thead>
         <tr>
           <th>Article Title</th>
@@ -66,6 +68,8 @@ class ArticleList extends Component {
         {articleElements}
         </tbody>
       </Table>
+      </>
+
     );
   }
 }
@@ -73,6 +77,8 @@ class ArticleList extends Component {
 export default connect((state) => {
   return {
     articles: ArticleSelector(state),
-    loading: state.articles.loading
+    loading: state.articles.loading,
+    countArticles: articlesCountGetterSelector(state),
+    countComments: commentsCountGetterSelector(state)
   };
 }, { loadAllArticles })(ArticleList);
