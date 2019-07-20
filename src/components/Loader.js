@@ -1,10 +1,9 @@
 import React from "react";
+import { Spinner } from "reactstrap";
 
 const Loader = () => {
   return (
-    <div>
-      <h2>Loading...</h2>
-    </div>
+    <Spinner animation="border" role="status"/>
   );
 };
 

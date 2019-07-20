@@ -7,7 +7,7 @@ import { loadAllArticles } from "../../AC";
 import { history } from "../../history";
 
 import "./App.css";
-import ArticleList from "../ArticleList";
+import ArticleList from "../ArticleList/ArticleList";
 
 class App extends Component {
   render() {
