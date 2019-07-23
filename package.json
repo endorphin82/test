@@ -9,6 +9,7 @@
     "concurrently": "^4.1.1",
     "connected-react-router": "^6.5.2",
     "immutable": "^4.0.0-rc.12",
+    "nodemon": "^1.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -22,11 +23,10 @@
   },
   "scripts": {
     "start": "concurrently \"npm run api\" \"npm run dev",
-    "api": "node simple_api/server.js --watch",
+    "api": "nodemon simple_api/server.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "server": "json-server --watch simple_api/api/data.json --port 3004"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
