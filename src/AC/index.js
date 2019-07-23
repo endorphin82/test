@@ -4,10 +4,9 @@ import { LOAD_ALL_ARTICLES } from "../constants";
 export function loadAllArticles() {
   return {
     type: LOAD_ALL_ARTICLES,
-    callAPI: `http://localhost:3004/posts`
+    callAPI: `api/article`
   };
 };
-
 
 // width THUNK
 // import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS } from "../constants";
@@ -18,7 +17,7 @@ export function loadAllArticles() {
 //     type: LOAD_ALL_ARTICLES + START
 //   });
 //   return axios
-//     .get("http://localhost:3004/posts")
+//     .get("http://localhost:3004/api/article")
 //     .then(response => response.data)
 //     .then(response => dispatch({
 //       type: LOAD_ALL_ARTICLES + SUCCESS,
