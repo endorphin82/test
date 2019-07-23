@@ -3,6 +3,7 @@ import reducer from "../reducer";
 import { routerMiddleware } from "connected-react-router";
 import { history } from "../history";
 import api from "./middlewares/api";
+import thunk from 'redux-thunk';
 
 const routerHistoryMiddleware = routerMiddleware(history);
 
@@ -13,7 +14,7 @@ const composeEnhancers =
       // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
     }) : compose;
 const enhancer = composeEnhancers(
-  applyMiddleware(api, routerHistoryMiddleware)
+  applyMiddleware(api, thunk, routerHistoryMiddleware)
 );
 
 const store = createStore(reducer, {}, enhancer);
