@@ -1,5 +1,5 @@
 // import { replace } from "connected-react-router";
-import { LOAD_ALL_ARTICLES } from "../constants";
+import { LOAD_ALL_ARTICLES } from "constants.js";
 
 export function loadAllArticles() {
   return {

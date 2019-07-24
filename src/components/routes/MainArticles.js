@@ -1,8 +1,8 @@
 import React from "react";
-import ArticleList from "../ArticleList/ArticleList";
+import ArticleList from "components/ArticleList/ArticleList";
 import { Col, Container, Row } from "reactstrap";
-import ArticlesCount from "../ArticlesCount/ArticlesCount";
-import CommentsCount from "../CommentsCount/CommentsCount";
+import ArticlesCount from "components/ArticlesCount/ArticlesCount";
+import CommentsCount from "components/CommentsCount/CommentsCount";
 
 function MainArticles() {
   return (

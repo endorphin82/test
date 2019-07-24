@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { mapToArr } from "../helpers";
+import { mapToArr } from "helpers.js";
 
 const articlesGetter = state => state.articles.entities;
 // export const commentsCountGetter = state => state.articles.entities.reduce((acc, article) => acc.comments + article.comments.length);

@@ -1,6 +1,6 @@
-import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS } from "../constants";
+import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS } from "constants.js";
 import { OrderedMap, Record } from "immutable";
-import { arrToMap } from "../helpers";
+import { arrToMap } from "helpers.js";
 
 const ArticleRecord = Record({
   postId: undefined,

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FAILURE, START, SUCCESS } from "../../constants";
+import { FAILURE, START, SUCCESS } from "constants.js";
 
 
 export default store => next => action => {
