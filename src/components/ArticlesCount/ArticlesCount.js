@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { articlesCountGetterSelector } from "../../selectors";
+import { articlesCountGetterSelector } from "selectors";
 import { Card } from "reactstrap";
 
 function ArticlesCount(props) {

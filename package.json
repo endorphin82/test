@@ -25,6 +25,7 @@
     "start": "concurrently \"npm run api\" \"npm run dev",
     "api": "nodemon simple_api/server.js",
     "dev": "react-scripts start",
+    "dev2": "cross-env NODE_PATH=./src npm run dev",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },

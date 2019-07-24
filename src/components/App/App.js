@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { connect } from "react-redux";
 
-import { loadAllArticles } from "../../AC";
-import { history } from "../../history";
+import { loadAllArticles } from "AC";
+import { history } from "history.js";
 
 import "./App.css";
-import MainArticles from "../routes/MainArticles";
+import MainArticles from "components/routes/MainArticles";
 
 class App extends Component {
   render() {

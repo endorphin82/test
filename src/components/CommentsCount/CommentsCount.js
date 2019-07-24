@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { commentsCountGetterSelector } from "../../selectors";
+import { commentsCountGetterSelector } from "selectors";
 import { Card} from "reactstrap";
 
 function CommentsCount(props) {

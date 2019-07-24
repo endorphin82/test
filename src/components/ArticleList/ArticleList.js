@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { loadAllArticles } from "../../AC";
 import { connect } from "react-redux";
-import Loader from "../Loader";
+import Loader from "components/Loader";
 import { NavLink } from "react-router-dom";
-import { ArticleSelector } from "../../selectors";
+import { ArticleSelector } from "selectors";
 import { Button, Table } from "reactstrap";
 
 class ArticleList extends Component {
