@@ -1,0 +1,79 @@
+import React, { Component } from "react";
+import withHocs from "./ArticlesTableHocs";
+import { connect } from "react-redux";
+import { articlesSelector } from "selectors";
+import { loadAllArticles } from "AC";
+import Loader from "components/Loader";
+import Paper from "@material-ui/core/Paper";
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import { TableBody } from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import SvgIcon from "@material-ui/core/SvgIcon";
+
+class ArticlesTable extends Component {
+  componentDidMount() {
+    const { loading, loadAllArticles } = this.props;
+    if (!loading) loadAllArticles();
+  }
+
+  render() {
+    const { articles, loading, classes } = this.props;
+    if (!loading) return <Loader/>;
+    console.log(articles);
+    return (
+      <>
+        <Paper className={classes.root}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Article title</TableCell>
+                <TableCell>Content</TableCell>
+                <TableCell align="right">Comments</TableCell>
+                <TableCell>Actions</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {articles.map(article => {
+                return (
+                  <TableRow key={article.postId}>
+                    <TableCell component="th" scope="row">{article.name}</TableCell>
+                    <TableCell>{article.text}</TableCell>
+                    <TableCell>{article.comments.length}</TableCell>
+                    <TableCell align="right">
+                      <div className={classes.flexible}>
+                        <IconButton aria-label="Edit">
+                          <SvgIcon>
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path
+                              d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/>
+                          </SvgIcon>
+                        </IconButton>
+                        <IconButton aria-label="Delete">
+                          <SvgIcon>
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path
+                              d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                          </SvgIcon>
+                        </IconButton>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
+      </>
+    );
+  }
+}
+
+export default connect((state) => {
+  return {
+    articles: articlesSelector(state),
+    loading: state.articles.loading
+  };
+}, { loadAllArticles })(withHocs(ArticlesTable));

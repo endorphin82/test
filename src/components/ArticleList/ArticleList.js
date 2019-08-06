@@ -3,7 +3,7 @@ import { loadAllArticles } from "../../AC";
 import { connect } from "react-redux";
 import Loader from "components/Loader";
 import { NavLink } from "react-router-dom";
-import { ArticleSelector } from "selectors";
+import { articlesSelector } from "selectors";
 import { Button, Table } from "reactstrap";
 
 class ArticleList extends Component {
@@ -71,7 +71,7 @@ class ArticleList extends Component {
 
 export default connect((state) => {
   return {
-    articles: ArticleSelector(state),
+    articles: articlesSelector(state),
     loading: state.articles.loading
-  };
+  }
 }, { loadAllArticles })(ArticleList);
