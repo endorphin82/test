@@ -1,14 +1,22 @@
 export const styles = theme => ({
-  searchRoot: {
-    marginBottom: theme.spacing(3),
-    minHeight: theme.spacing(6),
-    display: "flex"
-  },
   root: {
     width: "100%",
-    overflowX: "auto"
+    overflowX: "auto",
+    marginBottom: theme.spacing(3),
+  },
+  cellMinWidth: {
+    minWidth: 120,
   },
   flexible: {
     display: "flex",
-  }
+  },
+  header2: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
 });
