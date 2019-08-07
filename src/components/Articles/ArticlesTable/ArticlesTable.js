@@ -13,7 +13,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 
 class ArticlesTable extends Component {
   componentDidMount() {
@@ -51,8 +50,8 @@ class ArticlesTable extends Component {
                       <TableCell align="center">{article.comments.length}</TableCell>
                       <TableCell align="right">
                         <div className={classes.flexible}>
-                          <Tooltip title="Edit">
-                            <IconButton aria-label="Edit">
+                          <Tooltip title="View">
+                            <IconButton aria-label="View">
                               <SvgIcon>
                                 <path d="M0 0h24v24H0z" fill="none"/>
                                 <path
@@ -77,17 +76,6 @@ class ArticlesTable extends Component {
               </TableBody>
             </Table>
           </Paper>
-        </Container>
-
-        <Container fixed>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <Paper className={classes.paper}>xs=6</Paper>
-            </Grid>
-            <Grid item xs={12}  sm={6}>
-              <Paper className={classes.paper}>xs=6</Paper>
-            </Grid>
-          </Grid>
         </Container>
       </>
     );

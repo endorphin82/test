@@ -10,6 +10,9 @@ export const styles = theme => ({
   flexible: {
     display: "flex",
   },
+  flexible_right: {
+    marginLeft: "auto"
+  },
   header2: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
