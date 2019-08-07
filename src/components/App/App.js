@@ -3,7 +3,7 @@ import { ConnectedRouter } from "connected-react-router";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import theme from "components/theme.js";
 import { history } from "history.js";
-import Articles from "../Articles/Articles";
+import Articles from "components/Articles/Articles";
 
 function App() {
   return (
@@ -14,6 +14,5 @@ function App() {
     </ConnectedRouter>
   );
 }
-
 
 export default App;

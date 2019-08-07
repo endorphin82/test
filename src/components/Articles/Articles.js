@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import ArticlesTable from "../ArticlesTable/ArticlesTable";
+import React from "react";
+import ArticlesTable from "components/Articles//ArticlesTable/ArticlesTable";
+import ArticlesCommentsCounts from "components/Articles/ArticlesCommentsCounts/ArticlesCommentsCounts";
 
-class Articles extends Component {
-  render() {
-    return (
-      <>
-        <ArticlesTable/>
-      </>
-    );
-  }
+function Articles() {
+  return (
+    <>
+      <ArticlesTable/>
+      <ArticlesCommentsCounts/>
+    </>
+  );
 }
 
 export default Articles;
