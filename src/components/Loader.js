@@ -1,10 +1,13 @@
 import React from "react";
-import { Spinner } from "reactstrap";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import withHocs from "./LoaderHocs"
 
-const Loader = () => {
+const Loader = ({classes} ) => {
   return (
-    <Spinner animation="border" role="status"/>
+    <div>
+      <CircularProgress className={classes.progress} />
+    </div>
   );
 };
 
-export default Loader;
+export default withHocs(Loader);
