@@ -52,7 +52,8 @@ class ArticlesTable extends Component {
                       <TableCell align="right">
                         <div className={classes.flexible}>
                           <Tooltip title="View">
-                            <IconButton aria-label="View">
+                            <IconButton
+                              aria-label="View">
                               <NavLink
                                 to={`/articles/${article.postId}`}
                                 style={{color: "white"}}
