@@ -51,6 +51,7 @@ class ArticlesTable extends Component {
                       <TableCell align="center">{article.comments.length}</TableCell>
                       <TableCell align="right">
                         <div className={classes.flexible}>
+                          {/*TODO: refactor button link and no down Accessibility */}
                           <Tooltip title="View">
                             <IconButton
                               aria-label="View">

@@ -2,7 +2,6 @@ import { createSelector } from "reselect";
 import { mapToArr } from "helpers.js";
 
 const articlesGetter = state => state.articles.entities;
-// export const commentsCountGetter = state => state.articles.entities.reduce((acc, article) => acc.comments + article.comments.length);
 
 export const articlesSelector = createSelector(articlesGetter, articles => {
   return mapToArr(articles);

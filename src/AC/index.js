@@ -1,4 +1,7 @@
-import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS } from "../constants";
+import {
+  LOAD_ALL_ARTICLES, LOAD_ARTICLE_COMMENTS,
+  START, SUCCESS, FAILURE
+} from "../constants";
 import axios from "axios";
 
 export const loadAllArticles = () => dispatch => {
