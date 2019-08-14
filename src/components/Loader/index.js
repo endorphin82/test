@@ -4,9 +4,9 @@ import withHocs from "./LoaderHocs"
 
 const Loader = ({classes} ) => {
   return (
-    <div>
+    <>
       <CircularProgress className={classes.progress} />
-    </div>
+    </>
   );
 };
 
