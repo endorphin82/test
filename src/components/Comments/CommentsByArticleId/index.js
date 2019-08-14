@@ -1,14 +1,13 @@
 import React, { Component } from "react";
+import ModalComments from "components/ModalComments"
 import withHocs from "./CommentsByArticleIdHocs";
 
 class CommentsByArticleId extends Component {
   render() {
-    const { id, comments, classes } = this.props;
-    console.log(comments);
+    const { id, comments } = this.props;
     return (
       <>
-        {`ID ${id}`}
-        {comments.map(comment => comment.text)}
+        <ModalComments comments={comments} id={id}/>
       </>
     );
   }
