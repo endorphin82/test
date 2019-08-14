@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import ModalComments from "components/ModalComments"
+import ModalComments from "components/ModalComments";
 import withHocs from "./CommentsByArticleIdHocs";
+import { history } from "history.js";
+
 
 class CommentsByArticleId extends Component {
   render() {

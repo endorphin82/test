@@ -2,8 +2,8 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import withHocs from "./ArticlesCommentsCountsHocs";
-import ArticlesCount from "./ArticlesCount/ArticlesCount";
-import CommentsCount from "./CommentsCount/CommentsCount";
+import ArticlesCount from "./ArticlesCount";
+import CommentsCount from "./CommentsCount";
 import Paper from "@material-ui/core/Paper";
 
 const ArticlesCommentsCounts = ({ classes }) => {
