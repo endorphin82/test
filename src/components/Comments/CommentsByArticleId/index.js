@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import ModalComments from "components/ModalComments";
 import withHocs from "./CommentsByArticleIdHocs";
-import { history } from "history.js";
 
-
-class CommentsByArticleId extends Component {
-  render() {
-    const { id, comments } = this.props;
-    return (
-      <>
-        <ModalComments comments={comments} id={id}/>
-      </>
-    );
-  }
+function CommentsByArticleId(props) {
+  const { id, comments, name } = props;
+  return (
+    <>
+      <ModalComments comments={comments} id={id} name={name}/>
+    </>
+  );
 }
+
+CommentsByArticleId.defaultProps = {
+  comments: [],
+  name: '',
+  id: null
+};
 
 export default withHocs(CommentsByArticleId);

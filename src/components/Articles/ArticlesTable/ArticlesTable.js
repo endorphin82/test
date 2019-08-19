@@ -51,6 +51,7 @@ function ArticlesTable({ articles, loading, classes, loadAllArticles }) {
                           <IconButton
                             aria-label="View">
                             <NavLink
+                              aria-label="View comments"
                               to={`/articles/${article.postId}`}
                               style={{ color: "white" }}
                               activeStyle={{ color: "gold" }}>
