@@ -10,6 +10,7 @@
     "axios": "^0.19.0",
     "concurrently": "^4.1.1",
     "connected-react-router": "^6.5.2",
+    "gh-pages": "^2.1.1",
     "immutable": "^4.0.0-rc.12",
     "nodemon": "^1.19.1",
     "prop-types": "^15.7.2",
@@ -28,7 +29,8 @@
     "api": "nodemon simple_api/server.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "deploy-gh-pages": "npm run build&&gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
