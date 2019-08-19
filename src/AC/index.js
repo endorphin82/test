@@ -1,6 +1,6 @@
 import {
   LOAD_ALL_ARTICLES, LOAD_ARTICLE_COMMENTS,
-  START, SUCCESS, FAILURE
+  START, SUCCESS, FAILURE, URL2
 } from "../constants";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ export const loadAllArticles = () => dispatch => {
     type: LOAD_ALL_ARTICLES + START
   });
   return axios
-    .get("http://localhost:3004/api/article")
+    .get(URL2)
     .then(response => response.data)
     .then(response => dispatch({
       type: LOAD_ALL_ARTICLES + SUCCESS,
