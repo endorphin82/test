@@ -3,16 +3,16 @@ import { withStyles } from "@material-ui/core/styles";
 import { compose } from "recompose";
 import { styles } from "./styles";
 import { commentsGetterByIdSelectorFactory, nameGetterByArticleIdSelectorFactory } from "selectors";
+import { deleteCommentByIndexByArticleId } from "AC";
 
 export default compose(
   withStyles(styles),
   connect((state, ownProps) => {
-      const commentSelector = commentsGetterByIdSelectorFactory();
-      const nameSelector = nameGetterByArticleIdSelectorFactory();
-      return {
-        name: nameSelector(state, ownProps),
-        comments: commentSelector(state, ownProps)
-      };
-    }
-  )
+    const commentSelector = commentsGetterByIdSelectorFactory();
+    const nameSelector = nameGetterByArticleIdSelectorFactory();
+    return {
+      name: nameSelector(state, ownProps),
+      comments: commentSelector(state, ownProps)
+    };
+  }, { deleteCommentByIndexByArticleId })
 );
