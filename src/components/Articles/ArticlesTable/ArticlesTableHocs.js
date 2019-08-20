@@ -3,7 +3,7 @@ import { compose } from "recompose";
 import { styles } from "./styles";
 import { connect } from "react-redux";
 import { articlesSelector } from "selectors";
-import { loadAllArticles } from "AC";
+import { loadAllArticles, deleteArticleById } from "AC";
 
 export default compose(
   withStyles(styles, { withTheme: true }),
@@ -12,5 +12,5 @@ export default compose(
       articles: articlesSelector(state),
       loading: state.articles.loading
     };
-  }, { loadAllArticles })
+  }, { loadAllArticles, deleteArticleById })
 );
