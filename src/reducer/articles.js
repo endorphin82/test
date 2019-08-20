@@ -1,6 +1,14 @@
-import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS, DELETE_ARTICLE_BY_ID } from "constants.js";
+import {
+  DELETE_ARTICLE_BY_ID,
+  DELETE_COMMENT_BY_IND_BY_ARTICLE_ID,
+  FAILURE,
+  LOAD_ALL_ARTICLES,
+  START,
+  SUCCESS
+} from "constants.js";
 import { OrderedMap, Record } from "immutable";
 import { arrToMap } from "helpers.js";
+import comments from "./comments";
 
 const ArticleRecord = Record({
   postId: undefined,
@@ -38,9 +46,14 @@ export default (articleState = defaultState, action) => {
         .set("loaded", false);
 
     case DELETE_ARTICLE_BY_ID:
-      console.log(articleState);
       return articleState
         .update("entities", entities => entities.filter(post => post.postId !== payload.id));
+
+    case DELETE_COMMENT_BY_IND_BY_ARTICLE_ID:
+      const { articleId, ind } = payload;
+      return articleState
+        .removeIn(["entities", articleId, "comments", ind]);
+
 
     default:
       return articleState;

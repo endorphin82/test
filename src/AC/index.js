@@ -1,5 +1,6 @@
 import {
   LOAD_ALL_ARTICLES, LOAD_ARTICLE_COMMENTS,
+  DELETE_COMMENT_BY_IND_BY_ARTICLE_ID,
   START, SUCCESS, FAILURE, URL2, DELETE_ARTICLE_BY_ID
 } from "../constants";
 import axios from "axios";
@@ -23,5 +24,12 @@ export const loadAllArticles = () => dispatch => {
 
 export const deleteArticleById = (id) => ({
   type: DELETE_ARTICLE_BY_ID,
-  payload: { id}
-})
+  payload: { id }
+});
+
+export const deleteCommentByIndexByArticleId = (articleId, ind) => {
+  return {
+    type: DELETE_COMMENT_BY_IND_BY_ARTICLE_ID,
+    payload: { articleId, ind }
+  };
+};

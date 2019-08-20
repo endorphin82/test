@@ -3,17 +3,19 @@ import ModalComments from "components/ModalComments";
 import withHocs from "./CommentsByArticleIdHocs";
 
 function CommentsByArticleId(props) {
-  const { id, comments, name } = props;
+  const { id, comments, name, deleteCommentByIndexByArticleId } = props;
+
   return (
     <>
-      <ModalComments comments={comments} id={id} name={name}/>
+      <ModalComments comments={comments} id={id} name={name}
+                     onDeleteCommentByIndexByArticleId={deleteCommentByIndexByArticleId}/>
     </>
   );
 }
 
 CommentsByArticleId.defaultProps = {
   comments: [],
-  name: '',
+  name: "",
   id: null
 };
 

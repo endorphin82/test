@@ -11,7 +11,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-const ModalComments = ({ classes, comments, id, name }) => {
+const ModalComments = ({ classes, comments, id, name, onDeleteCommentByIndexByArticleId }) => {
   const [modalStyle] = React.useState({
     left: "50%",
     top: "50%",
@@ -46,13 +46,14 @@ const ModalComments = ({ classes, comments, id, name }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {comments.map((comment, i) => {
+              {comments.map((comment, ind) => {
                 return (
-                  <TableRow key={i}>
+                  <TableRow key={ind}>
                     <TableCell component="th" scope="row">{comment.text}</TableCell>
                     <TableCell>
                       <Tooltip title="Delete">
-                        <IconButton color="secondary" aria-label="Delete">
+                        <IconButton onClick={() => onDeleteCommentByIndexByArticleId(id, ind)} color="secondary"
+                                    aria-label="Delete">
                           <SvgIcon style={{ color: "white" }}>
                             <path d="M0 0h24v24H0z" fill="none"/>
                             <path
