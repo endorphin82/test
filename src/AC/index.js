@@ -1,6 +1,6 @@
 import {
   LOAD_ALL_ARTICLES, LOAD_ARTICLE_COMMENTS,
-  START, SUCCESS, FAILURE, URL2
+  START, SUCCESS, FAILURE, URL2, DELETE_ARTICLE_BY_ID
 } from "../constants";
 import axios from "axios";
 
@@ -13,10 +13,15 @@ export const loadAllArticles = () => dispatch => {
     .then(response => response.data)
     .then(response => dispatch({
       type: LOAD_ALL_ARTICLES + SUCCESS,
-      response
+      response: response.posts
     }))
     .catch(errors => dispatch({
       type: LOAD_ALL_ARTICLES + FAILURE,
       payload: { errors }
     }));
 };
+
+export const deleteArticleById = (id) => ({
+  type: DELETE_ARTICLE_BY_ID,
+  payload: { id}
+})

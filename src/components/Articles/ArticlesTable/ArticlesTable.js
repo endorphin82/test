@@ -15,7 +15,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import { NavLink } from "react-router-dom";
 
-function ArticlesTable({ articles, loading, classes, loadAllArticles }) {
+function ArticlesTable({ articles, loading, classes, loadAllArticles, deleteArticleById }) {
   useEffect(() => {
     if (!loading) loadAllArticles();
   });
@@ -64,7 +64,7 @@ function ArticlesTable({ articles, loading, classes, loadAllArticles }) {
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="Delete">
-                          <IconButton color="secondary" aria-label="Delete">
+                          <IconButton onClick={() => deleteArticleById(article.postId)} color="secondary" aria-label="Delete">
                             <SvgIcon style={{ color: "white" }}>
                               <path d="M0 0h24v24H0z" fill="none"/>
                               <path

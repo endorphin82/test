@@ -1,4 +1,4 @@
-import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS } from "constants.js";
+import { FAILURE, LOAD_ALL_ARTICLES, START, SUCCESS, DELETE_ARTICLE_BY_ID } from "constants.js";
 import { OrderedMap, Record } from "immutable";
 import { arrToMap } from "helpers.js";
 
@@ -19,7 +19,7 @@ const ReducerState = new Record({
 const defaultState = new ReducerState();
 
 export default (articleState = defaultState, action) => {
-  const { type, response, error } = action;
+  const { type, response, error, payload } = action;
 
   switch (type) {
     case LOAD_ALL_ARTICLES + START:
@@ -27,7 +27,7 @@ export default (articleState = defaultState, action) => {
 
     case LOAD_ALL_ARTICLES + SUCCESS:
       return articleState
-        .update("entities", entities => entities.merge(arrToMap(response.posts, ArticleRecord)))
+        .update("entities", entities => entities.merge(arrToMap(response, ArticleRecord)))
         .set("loading", true)
         .set("loaded", true);
 
@@ -36,6 +36,12 @@ export default (articleState = defaultState, action) => {
         .set("error", error)
         .set("loading", false)
         .set("loaded", false);
+
+    case DELETE_ARTICLE_BY_ID:
+      console.log(articleState);
+      return articleState
+        .update("entities", entities => entities.filter(post => post.postId !== payload.id));
+
     default:
       return articleState;
   }
