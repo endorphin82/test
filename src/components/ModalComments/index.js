@@ -19,13 +19,9 @@ const ModalComments = ({ classes, comments, id, name, onDeleteCommentByIndexByAr
   });
   const [open, setOpen] = React.useState(true, () => true);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
-    history.push("/");
+    history.goBack();
   };
 
   return (

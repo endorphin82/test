@@ -13,6 +13,5 @@ const database = "articles-test";
 const collection_id = "5d5a7e239e635d239b5141ad";
 
 export const URL2 = `https://api.mlab.com/api/1/databases/${database}/collections/${collection}/${collection_id}?apiKey=${myAPIKey}`;
-console.log(URL2);
 
 export const URL = "http://localhost:3004/api/article";

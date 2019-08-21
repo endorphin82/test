@@ -7,6 +7,7 @@ import { articlesCountGetterSelector } from "selectors";
 export default compose(
   withStyles(styles),
   connect(state => ({
-    countArticles: articlesCountGetterSelector(state)
+    countArticles: articlesCountGetterSelector(state),
+    loaded: state.articles.loaded
   }), null)
 );

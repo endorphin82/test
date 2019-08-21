@@ -7,6 +7,7 @@ import { commentsCountGetterSelector } from "selectors";
 export default compose(
   withStyles(styles),
   connect(state => ({
-    countComments: commentsCountGetterSelector(state)
+    countComments: commentsCountGetterSelector(state),
+    loaded: state.articles.loaded
   }), null)
 );

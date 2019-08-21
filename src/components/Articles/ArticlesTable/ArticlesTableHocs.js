@@ -10,7 +10,9 @@ export default compose(
   connect((state) => {
     return {
       articles: articlesSelector(state),
-      loading: state.articles.loading
+      loading: state.articles.loading,
+      loaded: state.articles.loaded
     };
-  }, { loadAllArticles, deleteArticleById })
+  }, { loadAllArticles, deleteArticleById },
+    null, { pure: false })
 );

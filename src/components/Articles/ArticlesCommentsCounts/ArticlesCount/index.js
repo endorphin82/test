@@ -3,12 +3,13 @@ import withHocs from "./ArticlesCountHocs.js";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
+import Loader from "components/Loader";
 
-function ArticlesCount({ countArticles, classes }) {
+function ArticlesCount({ countArticles, classes, loaded }) {
   return (
     <>
       <Typography style={{ padding: "10px" }} variant="h4" component="h3">
-        {countArticles}
+        {!loaded ? <Loader/> : countArticles}
       </Typography>
       <Typography style={{ padding: "10px" }} variant="h4" component="h3">
         Articles
