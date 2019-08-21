@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlesTable from "components/Articles//ArticlesTable/ArticlesTable";
+import ArticlesTable from "components/Articles//ArticlesTable";
 import ArticlesCommentsCounts from "components/Articles/ArticlesCommentsCounts/ArticlesCommentsCounts";
 import { Route } from "react-router-dom";
 import CommentsByArticleId from "components/Comments/CommentsByArticleId";

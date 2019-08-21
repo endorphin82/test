@@ -8,7 +8,6 @@ import {
 } from "constants.js";
 import { OrderedMap, Record } from "immutable";
 import { arrToMap } from "helpers.js";
-import comments from "./comments";
 
 const ArticleRecord = Record({
   postId: undefined,
@@ -53,7 +52,6 @@ export default (articleState = defaultState, action) => {
       const { articleId, ind } = payload;
       return articleState
         .removeIn(["entities", articleId, "comments", ind]);
-
 
     default:
       return articleState;

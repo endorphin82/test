@@ -3,12 +3,13 @@ import widthHocs from "./CommentsCountHocs";
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Typography from "@material-ui/core/Typography";
+import Loader from "components/Loader";
 
-function CommentsCount({ countComments, classes }) {
+function CommentsCount({ countComments, classes, loaded }) {
   return (
     <>
       <Typography style={{padding: "10px"}} variant="h4" component="h3">
-        {countComments}
+        {!loaded ? <Loader/> : countComments}
       </Typography>
       <Typography  style={{padding: "10px"}} variant="h4" component="h3">
         Comments
