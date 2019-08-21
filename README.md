@@ -7,5 +7,7 @@ install:
     cd test
 
     npm i
-    
+  
     npm start
+    
+![audit](audit.jpg "audit") 
