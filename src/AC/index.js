@@ -11,13 +11,13 @@ export const loadAllArticles = () => dispatch => {
     type: LOAD_ALL_ARTICLES + START
   });
   return axios
-    .get(URL2)
-    // .get(URL)
+    // .get(URL2)
+    .get(URL)
     .then(response => response.data)
     .then(response => dispatch({
       type: LOAD_ALL_ARTICLES + SUCCESS,
-      response: response.posts
-      // response: response
+      // response: response.posts
+      response: response
     }))
     .catch(errors => dispatch({
       type: LOAD_ALL_ARTICLES + FAILURE,
@@ -30,9 +30,11 @@ export const deleteArticleById = (id) => ({
   payload: { id }
 });
 
-export const deleteCommentByIndexByArticleId = (articleId, ind) => {
-  return {
+export const deleteCommentByIndexByArticleId = articleId => dispatch => ind => {
+  dispatch({
     type: DELETE_COMMENT_BY_IND_BY_ARTICLE_ID,
     payload: { articleId, ind }
-  };
+  });
 };
+
+

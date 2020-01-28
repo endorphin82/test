@@ -24,6 +24,8 @@ const ModalComments = ({ classes, comments, id, name, onDeleteCommentByIndexByAr
     history.goBack();
   };
 
+  const handleDeleteCommentByIndexByArticleId = onDeleteCommentByIndexByArticleId();
+
   return (
     <>
       <Modal
@@ -48,7 +50,7 @@ const ModalComments = ({ classes, comments, id, name, onDeleteCommentByIndexByAr
                     <TableCell component="th" scope="row">{comment.text}</TableCell>
                     <TableCell>
                       <Tooltip title="Delete">
-                        <IconButton onClick={() => onDeleteCommentByIndexByArticleId(id, ind)} color="secondary"
+                        <IconButton onClick={handleDeleteCommentByIndexByArticleId.bind(null, ind)} color="secondary"
                                     aria-label="Delete">
                           <SvgIcon style={{ color: "white" }}>
                             <path d="M0 0h24v24H0z" fill="none"/>

@@ -8,7 +8,7 @@ function CommentsByArticleId(props) {
   return (
     <>
       <ModalComments comments={comments} id={id} name={name}
-                     onDeleteCommentByIndexByArticleId={deleteCommentByIndexByArticleId}/>
+                     onDeleteCommentByIndexByArticleId={deleteCommentByIndexByArticleId.bind(null, id)}/>
     </>
   );
 }
