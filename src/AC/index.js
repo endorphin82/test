@@ -21,18 +21,18 @@ export const loadAllArticles = () => dispatch => {
     }))
     .catch(errors => dispatch({
       type: LOAD_ALL_ARTICLES + FAILURE,
-      payload: {errors}
+      payload: { errors }
     }));
 };
 
 export const deleteArticleById = (id) => ({
   type: DELETE_ARTICLE_BY_ID,
-  payload: {id}
+  payload: { id }
 });
 
 export const deleteCommentByIndexByArticleId = (articleId, ind) => {
   return {
     type: DELETE_COMMENT_BY_IND_BY_ARTICLE_ID,
-    payload: {articleId, ind}
+    payload: { articleId, ind }
   };
 };
