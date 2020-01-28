@@ -11,7 +11,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-const ModalComments = ({ classes, comments, id, name, onDeleteCommentByIndexByArticleId }) => {
+const ModalComments = ({ classes, comments, name, onDeleteCommentByIndexByArticleId }) => {
   const [modalStyle] = React.useState({
     left: "50%",
     top: "50%",
