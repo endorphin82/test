@@ -5,10 +5,12 @@ import withHocs from "./CommentsByArticleIdHocs";
 function CommentsByArticleId(props) {
   const { id, comments, name, deleteCommentByIndexByArticleId } = props;
 
+  const handleDeleteCommentByIndexByArticleId = id => deleteCommentByIndexByArticleId(id);
+
   return (
     <>
       <ModalComments comments={comments} id={id} name={name}
-                     onDeleteCommentByIndexByArticleId={deleteCommentByIndexByArticleId.bind(null, id)}/>
+                     onDeleteCommentByIndexByArticleId={handleDeleteCommentByIndexByArticleId(id)}/>
     </>
   );
 }
